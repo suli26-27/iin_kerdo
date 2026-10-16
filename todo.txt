@@ -1,0 +1,3 @@
+TODO: A következő gombra a rádiógombok alapértelmezett állapotba
+TODO: Jegyezze meg a következő és előző gomb után a választást
+TODO: A mentés gombra tárolja a választásokat.

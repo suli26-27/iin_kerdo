@@ -35,6 +35,7 @@ public class MainController {
     private TextField questionField;
 
     List<Task> taskList;
+    int actualIndex = 0;
 
     @FXML
     void initialize() {
@@ -60,17 +61,31 @@ public class MainController {
 
     @FXML
     void onClickNextButton(ActionEvent event) {
+        startNextLoad();
+    }
 
+    void startNextLoad() {
+        if(actualIndex < taskList.size() -1 ) {
+            actualIndex++;
+            loadTask(actualIndex);
+        }
     }
 
     @FXML
     void onClickPreviousButton(ActionEvent event) {
-
+        if(actualIndex > 0) {
+            actualIndex--;
+            loadTask(actualIndex);
+        }
     }
 
     @FXML
     void onClickSaveButton(ActionEvent event) {
+        startSave();
+    }
 
+    void startSave() {
+        
     }
 
 }
