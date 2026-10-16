@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" />
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controllers.MainController">
+   <children>
+      <Label layoutX="307.0" layoutY="40.0" text="Feladat" />
+      <TextField fx:id="questionField" layoutX="124.0" layoutY="95.0" prefHeight="25.0" prefWidth="368.0" />
+      <TextField fx:id="idField" layoutX="70.0" layoutY="95.0" prefHeight="25.0" prefWidth="41.0" />
+      <RadioButton fx:id="answer1Radio" layoutX="68.0" layoutY="162.0" mnemonicParsing="false" text="RadioButton">
+         <toggleGroup>
+            <ToggleGroup fx:id="answers" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="answer2Radio" layoutX="68.0" layoutY="210.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$answers" />
+      <RadioButton fx:id="answer3Radio" layoutX="68.0" layoutY="257.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$answers" />
+      <RadioButton fx:id="answer4Radio" layoutX="68.0" layoutY="299.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$answers" />
+      <Button layoutX="217.0" layoutY="336.0" mnemonicParsing="false" onAction="#onClickSaveButton" text="Mentés" />
+      <Button layoutX="351.0" layoutY="336.0" mnemonicParsing="false" onAction="#onClickNextButton" text="Következő" />
+      <Button layoutX="68.0" layoutY="336.0" mnemonicParsing="false" onAction="#onClickPreviousButton" prefHeight="25.0" prefWidth="71.0" text="Előző" />
+   </children>
+</Pane>
