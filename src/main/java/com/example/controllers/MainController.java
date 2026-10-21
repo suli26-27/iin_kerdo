@@ -3,6 +3,7 @@ package com.example.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.models.Answer;
 import com.example.models.FileDataSource;
 import com.example.models.Task;
 
@@ -35,9 +36,13 @@ public class MainController {
     @FXML
     private TextField questionField;
 
+    @FXML
+    private TextField nameField;
+
     List<Task> taskList;
     int actualIndex = 0;
     List<Integer> answerList = new ArrayList<>();
+    FileDataSource file = new FileDataSource();
 
     @FXML
     void initialize() {
@@ -49,8 +54,7 @@ public class MainController {
         answerList.add(1);
     }
 
-    void loadData() {
-        FileDataSource file = new FileDataSource();
+    void loadData() {        
         taskList = file.readData();
         loadTask(0);
     }
@@ -101,6 +105,13 @@ public class MainController {
     void startSave() {
         answerList.set(actualIndex, getSelectedNum());
         System.out.println(answerList);
+        Answer answer = new Answer();
+        if(!nameField.getText().isEmpty()) {
+            answer.setName(nameField.getText());
+        }
+        
+        answer.setAnswerList(answerList);
+        file.writeAnswers(answer);        
     }
 
     int getSelectedNum() {

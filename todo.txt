@@ -1,2 +1,1 @@
-TODO: A mentés gombra tárolja a választásokat.
-TODO: Név bekérése
+TODO: A fájlba nem UTF-8 kódolva íródik a szöveg (ékezetek)
