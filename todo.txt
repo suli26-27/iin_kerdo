@@ -1,1 +1,2 @@
 TODO: A mentés gombra tárolja a választásokat.
+TODO: Név bekérése
